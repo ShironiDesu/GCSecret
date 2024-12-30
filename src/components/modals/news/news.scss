@@ -1,0 +1,188 @@
+@import "@/styles/mixins";
+@import "@/styles/typography";
+@import "@/styles/variables";
+
+.news {
+  --padding: 16px;
+  --bg: #d3c87996;
+
+  @include mobile {
+    --padding: 14px;
+  }
+  position: fixed;
+  z-index: 5;
+  max-width: 320px;
+  height: auto;
+  bottom: -100%;
+  right: 0;
+  background: $blue-card_gradient;
+  transition: 1s ease;
+  backdrop-filter: blur(20px);
+  border-radius: 4px 0px 0 0;
+
+  &.active {
+    transition-delay: 4s;
+    bottom: 0;
+    .news__close {
+      opacity: 1;
+      visibility: visible;
+      // transition: 0.3s linear 10s;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    left: -24px;
+    top: -24px;
+    cursor: pointer;
+    // background: var(--bg);
+    border-radius: 50%;
+    box-sizing: content-box;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    img {
+      width: 32px;
+    }
+  }
+
+  &__gift {
+    position: absolute;
+    right: -60px;
+    top: -40px;
+    rotate: 40deg;
+  }
+
+  &__header {
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    &__title {
+      font-size: 24px;
+    }
+    &__description {
+      line-height: 24px;
+      font-size: 14px;
+    }
+    button {
+      transition: 0.5s;
+    }
+  }
+
+  &__main {
+    padding: 0 var(--padding);
+    max-height: 0;
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding);
+
+    &__title {
+      font-size: 12px;
+      line-height: 18px;
+      padding: 12px 0;
+      position: relative;
+      font-weight: 400;
+
+      .gold_text {
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 10%;
+        right: 10%;
+        background: $border-color;
+        // width: 100;
+        height: 1px;
+        border-radius: 10px;
+      }
+      &::after {
+        bottom: -1px;
+        top: auto;
+      }
+    }
+
+    &__subtitle {
+      line-height: 20px;
+    }
+    a {
+      @include button;
+      text-align: center;
+      margin-bottom: var(--padding);
+    }
+  }
+
+  @include tablet {
+    &__header {
+      &__title {
+        font-size: 24px;
+      }
+      &__description {
+        font-size: 14px;
+      }
+    }
+
+    &__main {
+      &__title {
+        font-size: 12px;
+      }
+    }
+  }
+
+  @include mobile {
+    &__gift {
+      top: -15px;
+      right: -32px;
+      width: 100px;
+      height: 48px;
+    }
+
+    &__header {
+      &__title {
+        font-size: 18px;
+      }
+      &__description {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+
+    &__main {
+      &__title {
+        font-size: 10px;
+        .gold_text {
+          font-size: 16px;
+        }
+      }
+      &__subtitle {
+        font-size: 10px;
+        line-height: 16px;
+      }
+
+      a {
+        font-size: 12px;
+        padding: 6px 12px;
+      }
+    }
+
+    max-width: 190px;
+  }
+
+  @keyframes showNews {
+    to {
+      bottom: 0;
+    }
+  }
+
+  @keyframes hideNews {
+    to {
+      bottom: -100%;
+    }
+  }
+}

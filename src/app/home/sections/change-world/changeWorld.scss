@@ -1,0 +1,130 @@
+@import "@/styles/mixins";
+@import "@/styles/typography";
+@import "@/styles/variables";
+
+.change-world {
+    width: 100%;
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    h2 {
+        font-size: 64px;
+        font-weight: 400;
+        line-height: 83.2px;
+    }
+
+    p {
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 41.6px;
+        margin-bottom: 42px;
+    }
+
+    .blue-text {
+        color: rgba(45, 199, 246, 1);
+    }
+
+    &__btn {
+        width: 372px;
+        gap: 63px;
+        justify-content: flex-end;
+        margin: auto;
+        padding: 24px 48px 24px 0;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 31.2px; 
+
+        .button-img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    @include break(1270px) {
+        h2 {
+            font-size: 52px;
+            line-height: 72px;
+        }
+        p {
+            font-size: 28px;
+            line-height: 40.4px;
+        } 
+    }
+
+    @include break(1000px) {
+        h2 {
+            font-size: 42px;
+            line-height: 64px;
+        }
+        p {
+            font-size: 24px;
+            line-height: 35.4px;
+            margin-bottom: 35px;
+        } 
+
+        &__btn {
+            width: 362px;
+            padding: 24px 62px 24px 0;
+            font-size: 20px;
+            .button-img {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+
+    @include break(875px) {   
+        h2 {
+            font-size: 36px;
+            line-height: 52px;
+        } 
+        p {
+            font-size: 24px;
+            line-height: 31.2px;
+        } 
+    }
+
+    @include tablet {
+        p {
+            font-size: 20px;
+            line-height: 27.4px;
+            margin-bottom: 25px;
+        } 
+
+        &__btn {
+            font-size: 18px;
+        }
+    }
+
+    @include break(601px) {
+        h2 {
+            font-size: 32px;
+            line-height: 41.6px;
+        }
+    }
+
+    @include break(400px) {
+        h2 {
+            font-size: 30px;
+            line-height: 38px;
+        } 
+        p {
+            font-size: 18px;
+            line-height: 24.2px;
+            margin-bottom: 12px;
+        } 
+
+        &__btn {
+            width: 300px;
+            padding: 24px 48px 24px 0;
+            font-size: 16px;
+            .button-img {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+}

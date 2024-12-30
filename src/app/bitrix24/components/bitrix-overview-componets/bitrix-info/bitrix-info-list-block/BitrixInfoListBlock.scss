@@ -1,0 +1,73 @@
+@import "@/styles/mixins";
+@import "@/styles/typography";
+@import "@/styles/variables";
+.bitrix-overview__list__container {
+    padding: 32px;
+    // height: 100%;
+    @include pc {
+        padding: 29px;
+    }
+    @include laptop {
+        padding: 24px;
+    }
+    @include mobile-big {
+        padding: 20px;
+    }
+}
+.bitrix-overview__list__block {
+   
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    // height: 100%;
+    @include pc {
+        gap: 20px;
+    }
+    @include mobile-big {
+        gap: 16px;
+    }
+}
+.bitrix-overview__list__title {
+    font-size: 32px;
+    line-height: 41.6px;
+    @include pc {
+        font-size: 24px;
+        line-height: 35px;
+    }
+    // @include laptop {
+    //     font-size: 22px;
+    // }
+    @include tablet-big {
+        font-size: 20px;
+        line-height: 26px;
+    }
+    
+}
+.bitrix-overview__list__item{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    line-height: 20px;
+    @include pc {
+        font-size: 15px;
+        line-height: 16px;
+    }
+    @include laptop {
+        font-size: 14px;
+        line-height: 18px;
+    }
+    
+}
+.bitrix-overview__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    @include pc {
+        gap: 16px;
+    }
+}
+.bitrix-icon {
+    display: flex;
+    align-self: flex-start;
+}

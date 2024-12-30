@@ -1,0 +1,283 @@
+@import "@/styles/mixins";
+@import "@/styles/typography";
+@import "@/styles/variables";
+
+.card {
+  padding: 48px;
+  background: $card-color;
+  border-radius: 4px;
+  h2 {
+    font-size: 64px;
+    line-height: 82px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 48px;
+  }
+
+  &__min-price {
+    @include button;
+    display: none;
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    button {
+      margin: 0;
+      background: none;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  @include pc {
+    padding: 32px;
+
+    &__header {
+      margin-bottom: 32px;
+    }
+  }
+
+  @include tablet-big {
+    padding: 24px 0px;
+    h2 {
+      font-size: 54px;
+      line-height: 64px;
+    }
+
+    &__header {
+      margin-bottom: 24px;
+      padding: 0 24px;
+    }
+  }
+
+  @include tablet {
+    h2 {
+      font-size: 32px;
+      line-height: 42px;
+    }
+  }
+
+  @include mobile-big {
+    &__header {
+      padding: 0 16px;
+    }
+  }
+
+  @include mobile-min {
+    h2 {
+      font-size: 28px;
+      line-height: 36px;
+    }
+  }
+}
+
+#bitrix-card {
+  background: $blue-card_gradient;
+
+  h2::after {
+    content: " Битрикс24";
+  }
+
+  .card__header {
+    justify-content: unset;
+    align-items: center;
+    flex-wrap: wrap;
+
+
+  }
+
+  .card__min-price {
+    display: block;
+    font-size: 24px;
+    margin-left: 32px;
+  }
+
+  .card__navigation {
+    margin-left: auto;
+  }
+
+  h3 {
+    background: $blue-text_gradient !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+  }
+
+  .swiper-slide {
+    background: $blue-card_gradient;
+    &:not(:first-child) {
+      .segments-swiper__price-wrapper {
+        display: flex;
+        gap: 12px;
+        align-items: flex-end;
+
+        span {
+          font-size: 24px;
+          &:first-child {
+            &::after {
+              content: "/мес";
+              font-size: 14px;
+            }
+          }
+
+          &:last-child {
+            &::after {
+              content: "/год";
+              font-size: 16px;
+            }
+          }
+        }
+      }
+
+      .segments-swiper__price--line {
+        width: 1px;
+        height: 32px;
+        background: $white;
+        opacity: 0.12;
+      }
+
+      @include pc {
+        .segments-swiper__price-wrapper span {
+          font-size: 20px;
+        }
+      }
+
+      @include break(1100px) {
+        .segments-swiper__price-wrapper {
+          flex-direction: column;
+        }
+
+        .segments-swiper__price--line {
+          display: none;
+        }
+      }
+
+      @include break(1024px) {
+        .segments-swiper__price-wrapper {
+          flex-direction: row;
+        }
+
+        .segments-swiper__price--line {
+          display: block;
+        }
+      }
+
+      @include break(710px) {
+        .segments-swiper__price-wrapper {
+          flex-direction: column;
+        }
+
+        .segments-swiper__price--line {
+          display: none;
+        }
+      }
+
+      @include break(650px) {
+        .segments-swiper__price-wrapper {
+          flex-direction: row;
+        }
+
+        .segments-swiper__price--line {
+          display: block;
+        }
+      }
+
+      @include mobile-min {
+        .segments-swiper__price-wrapper {
+          flex-direction: column;
+        }
+
+        .segments-swiper__price--line {
+          display: none;
+        }
+      }
+    }
+
+    &:last-child {
+      .segments-swiper__price-wrapper {
+        span:last-child {
+          display: none;
+        }
+      }
+      .segments-swiper__price--line {
+        display: none;
+      }
+    }
+  }
+
+  .segments-swiper__days {
+    display: none;
+  }
+
+  .segments-swiper__order-btn {
+    &::before {
+      background: $blue-text_gradient;
+    }
+  }
+
+  .segments-swiper__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .swiper-pagination {
+    &::after {
+      background-image: url("/icons/pagination_item-wrapper-blue.svg");
+    }
+    &-bullet {
+      background: $blue-text_gradient;
+    }
+  }
+
+  @include pc {
+    h2 {
+      font-size: 54px;
+    }
+  }
+
+  @include laptop {
+    .card__header {
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    h2 {
+      font-size: 42px;
+    }
+    .card__min-price {
+      font-size: 20px;
+      margin: 0;
+    }
+  }
+
+  @include tablet {
+    h2 {
+      font-size: 32px;
+    }
+    .card__min-price {
+      font-size: 14px;
+    }
+  }
+  @include mobile-big {
+    .card__header {
+      flex-wrap: nowrap;
+    }
+    h2 {
+      font-size: 24px;
+      &::after {
+        content: unset;
+      }
+    }
+  }
+  @include mobile {
+    .card__header {
+      gap: 12px;
+
+    }
+  }
+}

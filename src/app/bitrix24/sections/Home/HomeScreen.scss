@@ -1,0 +1,23 @@
+@import "@/styles/mixins";
+@import "@/styles/typography";
+@import "@/styles/variables";
+
+.home-screen__container {
+  display: flex;
+  flex-direction: column;
+  gap: 160px;
+  padding-bottom: 32px;
+  @include laptop {
+    gap: 130px;
+  }
+  @include tablet-big {
+    gap: 110px;
+  }
+
+  @include tablet {
+    gap: 100px;
+  }
+  @include mobile {
+    gap: 70px;
+  }
+}

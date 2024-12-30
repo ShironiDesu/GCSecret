@@ -1,0 +1,126 @@
+@import "@/styles/mixins";
+@import "@/styles/typography";
+@import "@/styles/variables";
+
+.work-screen {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  overflow: hidden;
+
+  &__title {
+    font-size: 52px;
+    line-height: 67.6px;
+    text-align: center;
+
+    @include laptop {
+      font-size: 46px;
+      line-height: 61.1px;
+    }
+
+    @include tablet {
+      font-size: 38px;
+      line-height: 51.6px;
+    }
+
+    @include mobile-big {
+      font-size: 36px;
+      line-height: 48.1px;
+    }
+
+    @include break(456px) {
+      .dis-none {
+        display: none;
+      }
+      font-size: 32px;
+      line-height: 41.6px;
+    }
+
+    @include mobile-big {
+      font-size: 28px;
+      line-height: 38.1px;
+    }
+  }
+
+  &__cards {
+    max-width: 868px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+
+    @include tablet {
+      width: 100%;
+    }
+
+    @include mobile-big {
+      gap: 24px;
+    }
+
+    @include break(600px) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      gap: 16px;
+    }
+
+    .work-screen__background {
+      max-width: 446px;
+      opacity: 6%;
+      aspect-ratio: 1/1;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+
+      @include mobile-big {
+        width: 100%;
+      }
+    }
+  }
+
+  &__try-with {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    h3 {
+      font-family: Georgia;
+      font-size: 32px;
+      font-style: italic;
+      line-height: 41.6px;
+      text-align: center;
+    }
+    p {
+      font-size: 18px;
+      line-height: 26px;
+      text-align: center;
+
+      .gold {
+        color: $main;
+      }
+    }
+
+    @include tablet {
+      h3 {
+        font-size: 26px;
+        line-height: 34px;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+
+    @include break(460px) {
+      h3 {
+        font-size: 24px;
+        line-height: 33.2px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+}

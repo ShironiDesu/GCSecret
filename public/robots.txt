@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://gamechanger.kz
+
+# Sitemaps
+Sitemap: https://gamechanger.kz/sitemap.xml

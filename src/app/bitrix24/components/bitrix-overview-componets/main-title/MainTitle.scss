@@ -1,0 +1,21 @@
+@import "@/styles/mixins";
+@import "@/styles/typography";
+@import "@/styles/variables";
+.main-title {
+font-size: 64px;
+line-height: 83px;
+text-align: center;
+margin-bottom: 60px;
+@include tablet-big {
+    font-size: 45px;
+    line-height: 60px;
+}
+@include tablet {
+    font-size: 35px;
+    line-height: 48px;
+}
+@include mobile-big {
+    font-size: 32px;
+    line-height: 41px;
+}
+}

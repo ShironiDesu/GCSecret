@@ -1,0 +1,104 @@
+@import "@/styles/mixins";
+@import "@/styles/typography";
+@import "@/styles/variables";
+
+.section5 {
+  margin-top: 50px;
+  h2 {
+    text-align: center;
+    font-size: 46px;
+    margin-bottom: 32px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template: repeat(2, 250px) / repeat(2, 300px);
+    gap: 32px;
+    place-content: center;
+  }
+
+  &__card {
+    display: grid;
+    grid-template-rows: 64px 1fr;
+    align-items: stretch;
+    justify-items: center;
+    gap: 20px;
+    padding: 32px;
+    background: $card-color;
+    border-radius: 4px;
+
+    br {
+      display: none;
+      @include break(440px) {
+        display: block;
+      }
+      @include mobile-min() {
+        display: none;
+      }
+    }
+
+
+    img {
+      width: 64px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 18px;
+      line-height: 26px;
+      color: $white;
+    }
+  }
+
+  @include tablet() {
+    h2 {
+      text-align: left;
+      font-size: 32px;
+      line-height: 42px;
+    }
+    &__list {
+      grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+      gap: 24px;
+      color: $main;
+    }
+
+    &__card {
+      padding: 18px;
+      p {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  @include mobile-big() {
+    h2 {
+      margin-bottom: 24px;
+    }
+    &__list {
+      gap: 16px;
+    }
+
+    &__card {
+      grid-template-rows: 48px 1fr;
+
+      p {
+        font-size: 14px;
+        line-height: 26px;
+      }
+    }
+  }
+
+  @include break(440px) {
+    &__list {
+      grid-template: repeat(4, 1fr) / auto;
+    }
+  }
+
+  @include mobile-min() {
+    h2 {
+      font-size: 28px;
+      line-height: 38px;
+    }
+  }
+}

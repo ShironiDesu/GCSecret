@@ -1,0 +1,488 @@
+@import "@/styles/mixins";
+@import "@/styles/typography";
+@import "@/styles/variables";
+
+.financial-advantages {
+
+    .container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+    }
+    
+    .blue_text {
+        color: rgba(45, 199, 246, 1);
+        font-weight: 400;
+    }
+
+    h2 {
+        font-size: 86px;
+        font-weight: 400;
+        line-height: 129px;
+    }
+
+    .financial-advantages__btn {
+        align-self: flex-end;
+    }
+
+    &__titles-h4 {
+        font-family: Manrope;
+        font-size: 64px;
+        font-weight: 400;
+        line-height: 87.42px;
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        gap: 92px;
+    }
+
+    &__adv-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 24px;
+        border-radius: 4px;
+        border: 1px;
+        background-color: rgba(255, 255, 255, 0.02);
+    }   
+
+    &__desc {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-left: 40px;
+        gap: 16px;
+
+        p {
+            font-family: Manrope;
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 50.4px;
+        }
+
+        .financial-advantages__par-mini {
+            font-size: 22px;
+            font-weight: 200;
+            line-height: 33px;
+        }
+    }
+
+    &__desc-left {
+        display: flex;
+        flex-direction: column;
+        margin-top: 29px;
+        gap: 12px;
+    }
+
+    &__price {
+        color: rgba(45, 199, 246, 1);
+        font-size: 64px;
+        font-weight: 300;
+        line-height: 87.42px;
+    }
+
+    &__some-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 46.86px;
+    }
+
+    &__small-card {
+        width: 46.6%;
+        display: flex;
+        padding: 20px 26px;
+        gap: 15.24px;
+        border-radius: 4.33px;
+        opacity: 0.7;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1.08px solid rgba(255, 255, 255, 0.32);
+
+        p {
+            font-size: 27.19px;
+            font-weight: 400;
+            line-height: 40.78px;
+        }
+
+        .financial-advantages__big-price {
+            font-size: 81.56px;
+            font-weight: 300;
+            line-height: 122.34px;
+            color: rgba(45, 199, 246, 1);
+        }
+    }
+
+    &__bottom-desc {
+        font-size: 34px;
+        line-height: 51px;
+        margin-top: 30px;
+        text-align: center;
+
+        .opacity-text {
+            opacity: 0.7;
+            font-weight: 300;
+        }
+
+        .bold-text {
+            font-weight: 600;
+            opacity: 1;
+        }
+    }
+
+    @include break(1270px) {
+        h2 {
+            font-size: 72px;
+            line-height: 100px;  
+        }
+        &__titles-h4 {
+            font-size: 52px;
+            line-height: 72px;
+        }
+        &__price {
+            font-size: 52px;
+            line-height: 72px;
+        }
+        &__desc {
+            p {
+                font-size: 28px;
+                line-height: 40.4px;
+            }  
+            .financial-advantages__par-mini {
+                font-size: 18px;
+                line-height: 25px;
+            }
+        }           
+        &__bottom-desc {
+            font-size: 28px;
+            line-height: 40.4px;
+        }
+    }
+
+    @include break(1110px) {
+        .container {
+            gap: 60px;
+        }
+
+        &__main {
+            gap: 65px;
+        }
+
+        &__small-card {
+            padding: 20px;
+            p {
+                font-size: 22px;
+                line-height: 32px;
+            }
+            .financial-advantages__big-price {
+                font-size: 70px;
+                line-height: 100px;
+            }
+        }
+
+        &__desc {
+            padding-left: 25px;
+        }
+
+        &__price {
+            font-size: 52px;
+            line-height: 70.42px;
+        }
+
+        &__bottom-desc {
+            font-size: 24px;
+            line-height: 35.4px;
+        }
+    }
+
+    @include break(1000px) {
+        h2 {
+            font-size: 56px;
+            line-height: 80.6px;
+        }
+
+        &__titles-h4 {
+            font-size: 42px;
+            line-height: 64px;
+        }
+
+        &__price {
+            font-size: 42px;
+            line-height: 64px;
+        }
+
+        &__desc {
+            p {
+                font-size: 24px;
+                line-height: 35.4px;
+            }  
+            .financial-advantages__par-mini {
+                font-size: 16px;
+                line-height: 21px;
+            }
+        }    
+        &__bottom-desc {
+            font-size: 22px;
+            line-height: 35.4px;
+        }
+
+        &__small-card {
+            p {
+                font-size: 18px;
+                line-height: 26px;
+            }
+            .financial-advantages__big-price {
+                font-size: 60px;
+                line-height: 87px;
+            }
+        }
+
+        &__some-cards {
+            gap: 28px;
+        }
+    }
+
+    @include break(875px) {   
+        &__desc {
+            p {
+                font-size: 20px;
+                line-height: 31.4px;
+            }  
+            padding-left: 0;
+        }    
+
+        &__bottom-desc {
+            font-size: 18px;
+            line-height: 31.4px;
+        }
+
+        &__desc-left {
+            margin-top: 10px;
+        }
+        &__titles-h4 {
+            font-size: 36px;
+            line-height: 52px;
+        } 
+    }
+
+    @include tablet() {
+        h2 {
+            font-size: 46px;
+            line-height: 62px;
+        }
+        &__titles-h4 {
+            font-size: 28px;
+            line-height: 40px;
+        } 
+        &__price {
+            align-self: flex-end;
+        }
+
+        &__some-cards {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__small-card {
+            width: 80%;
+            p {
+                font-size: 18px;
+                line-height: 26px;
+            }
+            .financial-advantages__big-price {
+                font-size: 60px;
+                line-height: 87px;
+            }
+        }
+        &__desc {
+            padding-top: 20px;
+            flex-direction: column;
+            align-items: flex-start;
+            p {
+                font-size: 20px;
+                line-height: 27.4px;
+            }  
+            .financial-advantages__par-mini {
+                font-size: 16px;
+                line-height: 21px;
+            }
+        }   
+        &__bottom-desc {
+            font-size: 18px;
+            line-height: 27.4px;
+        }
+        &__main {
+            gap: 35px;
+        }
+    }
+
+    @include break(700px) {
+        &__bottom-desc {
+            text-align: left;
+        }
+    }
+
+    @include break(601px) {
+        h2 {
+            font-size: 42px;
+            line-height: 52px;     
+        }
+        &__adv-card {
+            background-color: transparent;
+            padding: 0;
+        }
+        &__desc {
+            p {
+                font-size: 18px;
+                line-height: 24.4px;
+            }  
+            .financial-advantages__par-mini {
+                font-size: 14px;
+                line-height: 17px;
+            }
+        }   
+
+        &__bottom-desc {
+            margin-top: 16px;
+            font-size: 16px;
+            line-height: 24.4px;
+        }
+        .container {
+            gap: 40px;
+        }
+        &__titles-h4 {
+            font-size: 24px;
+            line-height: 30px;
+        }
+
+        &__small-card {
+            width: 90%;
+            padding: 10px 15px;
+            p {
+                font-size: 16px;
+                line-height: 21px;
+            }
+            .financial-advantages__big-price {
+                font-size: 42px;
+                line-height: 57px;
+            }
+        }
+
+        &__main {
+            background-color: rgba(255, 255, 255, 0.04);
+            padding: 22px;
+            gap: 20px;
+        }
+
+        &__some-cards {
+            margin-top: 15px;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    @include break(485px) {
+        h2 {
+            font-size: 41px;
+            line-height: 53.3px;
+        }
+        &__titles-h4 {
+            font-size: 17px;
+            line-height: 25.5px;
+        }
+        &__desc {
+            padding-top: 13px;
+            p {
+                font-size: 12.79px;
+                line-height: 19.18px;
+            }  
+            .financial-advantages__par-mini {
+                font-size: 11px;
+                line-height: 16.5px;          
+            }
+        } 
+        &__bottom-desc {
+            font-size: 12.79px;
+            line-height: 19.18px;
+        }
+        &__desc-left {
+            gap: 8px;
+            margin-top: 0;
+        }
+
+        &__small-card {
+            padding: 11px 10px;
+            gap: 7px;
+            border-radius: 2px;
+            p {
+                font-size: 14px;
+                line-height: 22px; 
+            }
+            .financial-advantages__big-price {
+                font-size: 36px;
+                line-height: 55px;
+            }
+        }
+        .container {
+            gap: 35px;
+        }
+    }
+
+    @include mobile {
+        &__small-card {
+            width: 100%;
+        }
+    }
+
+    @include mobile-mid() {
+        &__main {
+            padding: 17px;
+        }
+        &__titles-h4 {
+            font-size: 14.8px;
+            line-height: 21px;
+        }
+        &__desc {
+            padding-top: 13px;
+            p {
+                font-size: 12px;
+                line-height: 18px;
+            }  
+            .financial-advantages__par-mini {
+                font-size: 10px;
+                line-height: 15px;          
+            }
+        } 
+        &__bottom-desc {
+            font-size: 12px;
+            line-height: 18px;
+        }
+
+        &__price {
+            font-size: 38px;
+        }
+
+        &__small-card {
+            padding: 11px 10px;
+            gap: 7px;
+            border-radius: 2px;
+            p {
+                font-size: 13px;
+                line-height: 19.5px; 
+            }
+            .financial-advantages__big-price {
+                font-size: 32px;
+                line-height: 47px;
+            }
+        }
+    }
+
+    
+}
+
+
+
+

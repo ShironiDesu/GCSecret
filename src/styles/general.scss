@@ -1,0 +1,142 @@
+@import "mixins";
+@import "typography";
+@import "variables";
+
+body,
+.container,
+ul {
+  &::-webkit-scrollbar {
+    position: absolute !important;
+    right: 0;
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $main;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+    &:active {
+      background-color: white;
+    }
+  }
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 64px;
+  position: relative;
+  @include pc {
+    padding: 32px;
+  }
+
+  @include laptop() {
+    padding: 24px;
+  }
+  @include mobile-big() {
+    padding: 16px;
+  }
+}
+
+.gold_text {
+  color: $main;
+}
+
+.button {
+  @include button;
+}
+
+.button-rounded {
+  @include buttonRounded;
+}
+
+.button-text {
+  @include buttonText;
+}
+
+.input-wrapper {
+  border-bottom: 1px solid $main;
+  position: relative;
+  input {
+    border: none;
+    background: none;
+    font-size: 16px;
+    height: 45px;
+    width: 100%;
+    &:focus {
+      outline: none;
+    }
+    &:not([type="file"]):focus ~ label,
+    &:not(:placeholder-shown):not([type="file"]) ~ label {
+      font-size: 12px;
+      color: gray;
+      top: 0;
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: 0.5s ease;
+  }
+}
+
+.popup {
+  position: fixed;
+  width: 100vw;
+  height: 100dvh;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  backdrop-filter: blur(50px);
+  transition: 0.5s ease;
+  background: rgba(0, 0, 0, 0.4);
+
+  .gold_text {
+  color: #d3c879 !important;
+
+  }
+
+  * {
+    &::-webkit-scrollbar {
+      position: absolute !important;
+      right: 0;
+      width: 8px;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background-color: #d3c879 !important;
+      border-radius: 10px;
+      transition: 0.3s;
+      cursor: pointer;
+      &:active {
+        background-color: white;
+      }
+    }
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .container {
+    overscroll-behavior: contain;
+    overflow-y: auto;
+    height: 100dvh;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+
+    @include breakMin(1440px) {
+      padding: 32px;
+    }
+  }
+}
+
+

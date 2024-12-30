@@ -1,0 +1,173 @@
+@import "@/styles/mixins";
+@import "@/styles/typography";
+@import "@/styles/variables";
+
+.after-implementation {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    h3 {
+        // font-family: Manrope;
+        font-size: 64px;
+        font-weight: 200;
+        line-height: 83.2px;
+        text-align: center;
+    }
+
+    &__main {
+        
+        display: flex;
+        align-items: center;
+        gap: 32px;
+    }
+
+    &__some-descriptions {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 277px;
+        gap: 8px;
+        justify-content: center;
+    }
+
+    &__description {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 26px 24px;
+        gap: 20px;
+        border-radius: 4px;
+        background-color: rgba(255, 255, 255, 0.04);
+
+        p {
+            // font-family: Manrope;
+            font-size: 28px;
+            font-weight: 400;
+            line-height: 36.4px;
+        }
+    }
+
+    &__number-img {
+        width: 206px;
+        height: 248px;
+    }
+
+    .first-img {
+        width: 162px;
+        height: 276px;
+    }
+
+    .extra-margin {
+        margin-left: 42px;
+    }
+
+    &__tick-img {
+        width: 27px;
+        height: 27px;
+    }
+
+    @include tablet-big {
+        h3 {
+            font-size: 48px;
+            line-height: 60px;
+        }
+
+        // &__main {
+        //     height: auto;
+        // }
+
+        p {
+            font-size: 18px;
+            line-height: 26px;
+        }
+
+        &__tick-img {
+            width: 23px;
+            height: 23px;
+        }
+    }
+
+    @include tablet {
+        &__number-img {
+            display: none;
+        }
+
+        &__tick-img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .extra-margin {
+            margin-left: 0;
+        }
+
+        &__some-descriptions {
+            justify-content: flex-start;
+            min-height: 0;
+        }
+
+        
+        &__description {
+            padding: 20px 16px;
+            gap: 17px;
+            border-radius: 5.67px;
+            border: 0.5px;
+
+            border: 0.5px solid rgba(255, 255, 255, 0.2)
+        }
+    }
+
+    @include break(650px) {
+        h3 {
+            font-size: 36px;
+            line-height: 48px;
+            text-align: left;
+        }
+
+        &__tick-img {
+            width: 17px;
+            height: 17px;
+        }
+
+        gap: 20px;
+    }
+
+    @include break(500px) {
+        gap: 12px;
+        p {
+            font-size: 14.79px;
+            line-height: 19.23px;
+        }
+
+        h3 {
+            font-size: 32px;
+            line-height: 41.6px;
+        }
+
+        &__description {
+            padding: 12px;
+            gap: 12px;
+        }
+    }
+
+    @include mobile-big {
+        h3 {
+            font-size: 32px;
+            line-height: 38px;
+        }
+
+        &__tick-img {
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+    @include mobile-mid {
+        p {
+            font-size: 13px;
+            line-height: 19px;
+        }
+    }
+}

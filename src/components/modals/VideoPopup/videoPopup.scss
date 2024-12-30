@@ -1,0 +1,38 @@
+@import "@/styles/mixins";
+@import "@/styles/typography";
+@import "@/styles/variables";
+
+.video-popup {
+  .container {
+    
+    display: flex;
+  }
+  .close_popup {
+    background: none;
+    position: absolute;
+    border: none;
+
+    border-radius: 50%;
+    img {
+      border-radius: 50%;
+    }
+  }
+  video {
+    min-width: 768px;
+    max-width: 768px;
+    margin: auto ;
+    display: block;
+    aspect-ratio: 1/1;
+
+    @include tablet {
+      min-width: 90vw;
+    }
+  }
+
+  @include tablet {
+    video {
+      height: 80%;
+      width: 90%;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@import "@/styles/mixins";
+@import "@/styles/typography";
+@import "@/styles/variables";
+
+.section6 {
+  h2 {
+    font-size: 74px;
+    line-height: 100px;
+    margin-bottom: 40px;
+  }
+
+  @include laptop() {
+    h2 {
+      font-size: 56px;
+      line-height: 80px;
+    }
+  }
+
+  @include tablet-big() {
+    h2 {
+      font-size: 32px;
+      line-height: 42px;
+      margin-bottom: 20px;
+    }
+  }
+
+  @include mobile-big() {
+    h2 {
+      font-size: 28px;
+    }
+  }
+
+  @include mobile-mid {
+    h2 {
+      font-size: 24px;
+      line-height: 34px;
+    }
+  }
+
+  @include mobile-min() {
+    h2 {
+      font-size: 22px;
+    }
+  }
+}

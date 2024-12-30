@@ -1,0 +1,115 @@
+@import "@/styles/mixins";
+@import "@/styles/typography";
+@import "@/styles/variables";
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 45px 45px auto;
+  gap: 40px 32px;
+  &__wrapper {
+    position: relative;
+    border-bottom: 1px solid #d3c87930 !important;
+
+    input {
+      border: none;
+      font-size: 20px;
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
+      color: $white;
+
+      &[type="file"] {
+        opacity: 0;
+      }
+
+      &:focus {
+        outline: none;
+      }
+      &:not([type="file"]):focus ~ label,
+      &:not(:placeholder-shown):not([type="file"]) ~ label {
+        font-size: 12px;
+        color: gray;
+        top: 0;
+      }
+
+      @include mobile-big {
+        font-size: 14px;
+      }
+    }
+
+    label {
+      line-height: 24px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      pointer-events: none;
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    &--task {
+      cursor: pointer;
+    }
+
+    &--file {
+      label {
+        left: 42px !important;
+        @include tablet {
+          left: 32px !important;
+        }
+      }
+      img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+      }
+      @include tablet {
+        img {
+          width: 24px;
+          height: 24px;
+        }
+        label {
+          left: 32px;
+        }
+      }
+    }
+  }
+
+  &__send-form--wrapper {
+    position: relative;
+    width: fit-content;
+    border-radius: 10px;
+    img {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      right: -42px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__send-form {
+    @include button();
+    width: fit-content;
+    padding: 16px 32px;
+    cursor: pointer;
+    border: none !important;
+  }
+
+  @include tablet-big() {
+    grid-template: repeat(6, 1fr) / 1fr;
+    gap: 20px;
+    &__wrapper {
+      height: 45px;
+      &--task {
+        grid-column-start: unset;
+      }
+    }
+  }
+}

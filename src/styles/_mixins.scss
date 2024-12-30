@@ -1,0 +1,151 @@
+@import "variables";
+
+// #region BREAKPOINTS
+@mixin break($size) {
+    @media (max-width: #{$size}) {
+        @content;
+    }
+}
+
+@mixin breakMin($size) {
+    @media (min-width: #{$size}) {
+        @content;
+    }
+}
+
+@mixin break-height($size) {
+    @media (max-height: #{$size}) {
+        @content;
+    }
+}
+
+@mixin pc() {
+    @include break(1440px) {
+        @content;
+    }
+}
+
+@mixin laptop() {
+    @include break(1024px) {
+        @content;
+    }
+}
+
+@mixin tablet-big() {
+    @include break(960px) {
+        @content;
+    }
+}
+
+@mixin tablet() {
+    @include break(768px) {
+        @content;
+    }
+}
+
+@mixin mobile-big() {
+    @include break(525px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: 426px) {
+        @content;
+    }
+}
+
+@mixin mobile-mid {
+    @media (max-width: 375px) {
+        @content;
+    }
+}
+
+@mixin mobile-min {
+    @media (max-width: 350px) {
+        @content;
+    }
+}
+
+// #endregion
+
+@mixin button {
+    background: #ffffff0f;
+    position: relative;
+    padding: 12px 24px;
+    font-size: 14px;
+    border: none;
+    border-radius: 100px;
+    line-height: 26px;
+    color: $white;
+    font-weight: 500;
+}
+
+@mixin buttonText {
+    font-size: 20px;
+    color: $white;
+    padding: 12px 0;
+    position: relative;
+    background: none;
+    font-weight: 500;
+    border: none;
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50%;
+        height: 1px;
+        background: $main;
+        transition: 0.3s ease;
+    }
+
+    &:hover {
+        &::before {
+            width: 100%;
+        }
+    }
+}
+
+@mixin buttonRounded {
+    display: flex;
+    align-items: center;
+    color: $white;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 24.7px;
+    gap: 20px;
+    padding: 21px 48px;
+    border-radius: 100px;
+    background: rgba(45, 199, 246, 0.14);
+    border: 1px solid rgba(45, 199, 246, 0.32);
+    margin-left: auto;
+
+    .button-img {
+      transition: 0.4s ease;
+    }
+    &:hover {
+      .button-img {
+        transform: rotate(-45deg);
+      }
+    }
+
+    @include break(601px) {
+      margin: auto;
+      font-size: 16px;
+      line-height: 20.8px;
+      gap: 18.5px;
+      padding: 24px 48px;
+      text-align: center;
+
+      .financial-advantages__img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    @include mobile-mid() {
+      gap: 16px;
+      padding: 20px 35px;
+    }
+  }

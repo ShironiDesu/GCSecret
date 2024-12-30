@@ -1,0 +1,69 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+:root {
+  --line-height-h1: 144px;
+  --line-height-h2: 110px;
+  --h1: 120px;
+  --h2: 100px;
+  --h3: 80px;
+  --h2-price: 72px;
+  --XXL: 48px;
+  --XL: 32px;
+  --L: 24px;
+  --M: 20px;
+  --S: 16px;
+  --main: #d3c879;
+  --XS: 14px;
+  --XXS: 12px;
+  --blue-gradient-text: linear-gradient(178.54deg, #2ec7f6 63.95%, #0065a0 120.15%);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+  font-family: var(--manrope), sans-serif;
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #061b16;
+}
+
+main {
+  padding-top: 110px;
+}
+
+@media (max-width: 1024px) {
+}
+
+button,
+a,
+input[type="file"] {
+  cursor: pointer;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}

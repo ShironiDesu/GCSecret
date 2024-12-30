@@ -1,0 +1,88 @@
+@import "@/styles/mixins";
+@import "@/styles/typography";
+@import "@/styles/variables";
+
+.proud-section {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(4px);
+  padding: 48px;
+  gap: 48px;
+  border-radius: 8px;
+  margin-bottom: 120px;
+
+  h2 {
+    font-size: 64px;
+    line-height: 83.2px;
+    text-align: left;
+
+    .gold {
+      color: $main;
+    }
+  }
+
+  @include pc {
+    h2 {
+      font-size: 52px;
+      line-height: 70px;
+    }
+  }
+
+  @include laptop {
+    h2 {
+      font-size: 42px;
+      line-height: 60px;
+    }
+  }
+
+  @include break(860px) {
+    h2 {
+      font-size: 38px;
+      line-height: 55px;
+    }
+  }
+
+  @include tablet() {
+    padding: 24px;
+
+    h2 {
+      font-size: 34px;
+      line-height: 50px;
+    }
+  }
+
+  @include break(660px) {
+    h2 {
+      font-size: 28px;
+      line-height: 42px;
+    }
+  }
+
+  @include break(560px) {
+    h2 {
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+
+  @include mobile-big() {
+    padding: 16px;
+    margin-bottom: 80px;
+  }
+
+  @include break(460px) {
+    h2 {
+      font-size: 20px;
+      line-height: 30px;
+    }
+    margin-top: 30px;
+  }
+
+  @include mobile-mid() {
+    margin-top: 50px;
+  }
+
+  @include mobile-min() {
+    margin-top: 80px;
+  }
+}

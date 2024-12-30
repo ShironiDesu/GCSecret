@@ -1,0 +1,14 @@
+@import "@/styles/mixins";
+@import "@/styles/typography";
+@import "@/styles/variables";
+
+:root {
+  --main: #d3c879;
+}
+
+#about-main {
+  padding-top: 30px;
+  @include pc {
+    padding-top: 60px;
+  }
+}

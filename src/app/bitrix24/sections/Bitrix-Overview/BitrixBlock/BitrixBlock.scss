@@ -1,0 +1,31 @@
+@import "@/styles/mixins";
+@import "@/styles/typography";
+@import "@/styles/variables";
+.bitrix-block__container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 120px;
+  scroll-margin-top: 120px;
+  @include tablet {
+    margin-top: 80px;
+    scroll-margin-top: 80px;
+  }
+  @include mobile-big {
+    margin-top: 48px;
+  }
+}
+.bitrix-info-list,
+.bitrix-kanban-image {
+  opacity: 0;
+  transform: translateY(100px);
+  filter: blur(10px);
+  transition: all .5s ease-out;
+}
+
+.bitrix-info-list.animate,
+.bitrix-kanban-image.animate {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}

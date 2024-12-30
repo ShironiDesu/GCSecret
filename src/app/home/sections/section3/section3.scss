@@ -1,0 +1,243 @@
+@import "@/styles/mixins";
+@import "@/styles/typography";
+@import "@/styles/variables";
+
+.section3 {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+
+  h2 {
+    font-size: 62px;
+    line-height: 84px;
+  }
+
+  &__subtitle {
+    font-size: 42px;
+    line-height: 54px;
+  }
+
+  .swiper {
+    width: 85%;
+    margin: 0;
+    &-wrapper {
+      width: 100%;
+    }
+
+    &-slide {
+      background: $card-color;
+      border-radius: 4px;
+      padding: 8px;
+      display: grid;
+      place-content: center;
+    }
+
+    // img {
+    //   width: 100%;
+    //   height: auto;
+    // }
+  }
+
+  &__footer {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    &__btns {
+      display: flex;
+      gap: 40px;
+      @include mobile {
+        gap: 20px !important;
+      }
+      button {
+        font-size: 42px;
+        text-align: left;
+        &:last-child {
+          
+          &::before {
+            width: 20%;
+          }
+          &:hover {
+            &::before {
+              width: 100%;
+            }
+          }
+        }
+        @include pc {
+          font-size: 32px;
+        }
+
+        @include laptop {
+          font-family: 32px;
+        }
+        @include tablet-big {
+          font-size: 28px;
+        }
+        @include tablet {
+          font-size: 24px;
+        }
+        @include mobile-big {
+          font-size: 20px;
+        }
+        @include mobile-mid {
+          font-size: 16px;
+        }
+      }
+
+      
+      // @include mobile-big {
+      //   flex-direction: column;
+      //   gap: 10px !important;
+      // }
+    }
+  }
+
+  &__description {
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  @include pc {
+    h2 {
+      font-size: 52px;
+      line-height: 66px;
+    }
+
+    &__subtitle {
+      font-size: 32px;
+      line-height: 48px;
+    }
+
+    &__footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+      &__btns {
+        margin-left: 0;
+        display: flex;
+        gap: 40px;
+      }
+    }
+  }
+
+  @include break(1120px) {
+    h2 {
+      font-size: 44px;
+      line-height: 60px;
+    }
+  }
+
+  @include laptop() {
+    
+  &__subtitle {
+    font-size: 32px;
+    line-height: 42px;
+  }
+    .swiper {
+      width: 90%;
+    }
+
+    h2 {
+      font-size: 42px;
+    }
+  }
+
+  @include tablet-big {
+    h2 {
+      font-size: 38px;
+      line-height: 52px;
+    }
+    &__subtitle {
+      font-size: 28px;
+      line-height: 42px;
+    }
+  }
+
+  @include break(830px) {
+    h2 {
+      font-size: 32px;
+    }
+  }
+
+  @include tablet() {
+    .container {
+      gap: 32px;
+    }
+
+    h2 {
+      font-size: 28px;
+      line-height: 42px;
+    }
+
+    &__subtitle {
+      font-size: 24px;
+      line-height: 32px;
+    }
+    .swiper {
+      width: 100%;
+      position: relative;
+      width: calc(100% + 48px);
+      left: -24px;
+      padding: 1px 22px;
+    }
+    &__description {
+      font-size: 24px;
+    }
+  }
+
+  @include break(620px) {
+    h2 {
+      font-size: 28px;
+      line-height: 36px;
+      br {
+        display: none;
+      }
+    }
+    .swiper {
+      left: -25px;
+      padding: 1px 15px;
+    }
+  }
+
+  @include mobile-big() {
+    &__subtitle {
+      font-size: 32px;
+      line-height: 42px;
+      br {
+        display: none;
+      }
+    }
+    &__description {
+      line-height: 36px;
+    }
+    .swiper {
+      width: calc(100% + 32px);
+      left: -18px;
+    }
+  }
+
+  @include mobile() {
+    &__subtitle {
+      font-size: 30px;
+      line-height: 40px;
+    }
+  }
+  @include mobile-mid() {
+    &__subtitle {
+      font-size: 28px;
+      line-height: 38px;
+    }
+  }
+
+  @include mobile-min() {
+    &__subtitle {
+      font-size: 24px;
+      line-height: 34px;
+    }
+
+    &__description {
+      font-size: 18px;
+    }
+  }
+}

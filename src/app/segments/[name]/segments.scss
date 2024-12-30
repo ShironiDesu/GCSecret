@@ -1,0 +1,12 @@
+@import "@/styles/mixins";
+@import "@/styles/typography";
+@import "@/styles/variables";
+
+.segments-main {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  .container {
+    width: 100%;
+  }
+}

@@ -1,0 +1,42 @@
+@import "@/styles/mixins";
+@import "@/styles/typography";
+@import "@/styles/variables";
+.home__title {
+  font-size: 100px;
+  line-height: 100px;
+  @include pc {
+    font-size: 72px;
+    line-height: 82px;
+  }
+  @include tablet-big {
+    font-size: 60px;
+    line-height: 70px;
+  }
+  @include tablet {
+    font-size: 50px;
+    line-height: 65px;
+  }
+  @include mobile-big {
+    font-size: 48px;
+    line-height: 62px;
+  }
+  @include mobile {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  @include mobile-min {
+    font-size: 35px;
+    line-height: 40px;
+  }
+}
+.home__title__for-br {
+  display: none;
+  @include mobile-big {
+    display: block;
+  }
+}
+.home__title__buisness-br {
+  @include mobile-big {
+    display: none;
+  }
+}

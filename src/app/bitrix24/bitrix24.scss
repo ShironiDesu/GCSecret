@@ -1,0 +1,43 @@
+@import "@/styles/mixins";
+@import "@/styles/typography";
+@import "@/styles/variables";
+
+:root {
+  --title-background: rgba(255, 255, 255, 0.04);
+  --blue-background: linear-gradient(
+    178.54deg,
+    rgba(46, 199, 246, 0.12) 63.95%,
+    rgba(0, 101, 160, 0.12) 120.15%
+  );
+  --red-background: linear-gradient(
+    178.54deg,
+    rgba(246, 46, 46, 0.12) 63.95%,
+    rgba(160, 0, 0, 0.12) 120.15%
+  );
+
+  --blue-gradient-text: linear-gradient(178.54deg, #2ec7f6 63.95%, #0065a0 120.15%);
+}
+
+.main {
+  background: var(--main-background);
+}
+.blue-gradient {
+  background: var(--blue-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.bitrix-background {
+  background: var(--title-background);
+  border-radius: 4px;
+}
+.red-background {
+  background: var(--red-background);
+  border-radius: 4px;
+}
+.blue-background {
+  background: var(--blue-background);
+  border-radius: 4px;
+}
+.word-wrap {
+  display: block;
+}

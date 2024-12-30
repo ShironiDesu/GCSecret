@@ -1,0 +1,25 @@
+
+$main: var(--main);
+$white: #ffffff;
+$blur: blur(4px);
+$card-color: #ffffff0a;
+$btn-color: #ffffff14;
+$border-color: #FFFFFF29;
+
+$blue-card_gradient: linear-gradient(
+  178.54deg,
+  rgba(46, 199, 246, 0.12) 63.95%,
+  rgba(0, 101, 160, 0.12) 120.15%
+);
+
+$blue-text_gradient: linear-gradient(
+  178.54deg,
+  #2ec7f6 63.95%,
+  #0065a0 120.15%
+);
+
+$border-gray_gradient: linear-gradient(
+  107.15deg,
+  rgba(255, 255, 255, 0.32) 1.18%,
+  rgba(255, 255, 255, 0.0384) 97.41%
+);

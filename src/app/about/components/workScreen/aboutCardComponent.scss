@@ -1,0 +1,49 @@
+@import "@/styles/mixins";
+@import "@/styles/typography";
+@import "@/styles/variables";
+
+.about-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+  font-family: Manrope;
+  color: rgba(255, 253, 253, 1);
+  background-color: rgba(255, 255, 255, 0.04);
+  max-width: 420px;
+  height: 100%;
+  border-radius: 4px 0px 0px 0px;
+  backdrop-filter: blur(10px);
+  position: relative;
+
+  h3 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 34px;
+    text-align: left;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    text-align: left;
+
+  }
+
+
+  @include mobile {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  @include mobile-big {
+    font-size: 14px;
+  }
+
+  @include mobile-min {
+    padding: 18px;
+    width: 99%;
+    gap: 14px;
+  }
+}

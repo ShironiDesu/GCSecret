@@ -1,0 +1,407 @@
+@import "@/styles/mixins";
+@import "@/styles/typography";
+@import "@/styles/variables";
+
+.calendar {
+  .rdp {
+    &-root {
+      --rdp-cell-size: 24px;
+      --rdp-caption-font-size: 10px;
+      --rdp-accent-color: #d3c879;
+      --rdp-today-color: inherit;
+      --rdp-background-color: #e7edff;
+      --rdp-accent-color-dark: #3003e1;
+      --rdp-background-color-dark: #180270;
+      --rdp-outline: none;
+      --rdp-outline-selected: none;
+      --rdp-selected-border: none;
+      --rdp-selected-color: #fff;
+      --rdp-day_button-height: 32px;
+      --rdp-day_button-width: 32px;
+      --rdp-day-height: 32px;
+      --rdp-day-width: 32px;
+
+      @include mobile-min {
+        --rdp-day_button-height: 24px;
+        --rdp-day_button-width: 24px;
+        --rdp-day-height: 24px;
+        --rdp-day-width: 24px;
+      }
+    }
+
+    &-weekday {
+      text-transform: uppercase;
+    }
+
+    &-month_caption {
+      width: fit-content;
+      margin: 0 auto;
+      text-transform: capitalize;
+    }
+
+    &-nav {
+      width: 200px;
+      justify-content: space-between;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &-weekdays {
+      display: flex;
+      gap: 16px;
+      th {
+        width: 24px;
+      }
+
+      @include mobile-min {
+        th {
+          width: 22px;
+        }
+      }
+    }
+
+    &-week {
+      display: flex;
+      justify-content: space-between;
+      margin: 12px 0;
+    }
+
+    &-day_button {
+      background: #d3c87940;
+      font-size: 14px;
+      @include tablet-big {
+        font-size: 12px;
+      }
+    }
+
+    &-selected {
+      button {
+        background-color: #d3c879;
+        color: rgba(0, 0, 0, 0.8);
+      }
+    }
+    &-day_selected {
+      background: #d3c879;
+    }
+  }
+
+  &__box {
+    padding: 24px;
+  }
+
+  h2 {
+    font-size: 48px;
+    line-height: 68px;
+    margin-bottom: 48px;
+  }
+
+  .wrapper {
+    max-width: 870px;
+    margin: 0 auto;
+    background: $card-color;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: 35% 65%;
+  }
+
+  .close_popup {
+    background: none;
+    border: none;
+    border-radius: 50%;
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  &__aside {
+    border-right: 1px solid $border-color;
+    &__header {
+      border-bottom: 1px solid $border-color;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      justify-content: space-between;
+    }
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 16px 0;
+      span {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        font-size: 12px;
+        line-height: 18px;
+        &:last-child {
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+
+  &__avatar {
+    margin-bottom: 12px;
+  }
+
+  h3 {
+    grid-area: 1/1;
+    grid-column-start: 2 span;
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  &__name {
+    font-size: 14px;
+    opacity: 0.6;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    opacity: 0.6;
+    line-height: 20px;
+  }
+
+  &__description {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px 40px;
+    padding-left: 40px;
+
+    &__selected-day {
+      grid-column-start: 2 span;
+    }
+
+    &__right {
+      padding-top: 12px;
+      display: grid;
+      grid-template: auto auto 1fr auto / 1fr 1fr;
+      gap: 16px;
+
+      .calendar-next-step {
+        grid-area: 4/1;
+        grid-column-start: 2 span;
+        padding: 10px 12px;
+        color: #d3c879;
+        font-size: 12px;
+        font-weight: 500;
+        border: 1px solid #d3c879;
+        border-radius: 4px;
+        background: none;
+        background: #d3c879;
+        color: $white;
+        &:disabled {
+          cursor: auto;
+          border: 1px solid $border-color;
+          background: none;
+          color: rgba(255, 255, 255, 0.3);
+        }
+      }
+
+      .input-wrapper {
+        border-color: #d3c879 !important;
+      }
+    }
+
+    &__btns-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      gap: 4px;
+      grid-column-start: 2 span;
+
+      input[type="time"] {
+        background: none;
+        border: 1px solid $border-color;
+        border-radius: 4px;
+        font-size: 12px;
+        &.active {
+          border: 1px solid $white;
+        }
+
+        &:focus {
+          outline: none;
+        }
+        &::-webkit-calendar-picker-indicator {
+          display: none;
+          -webkit-appearance: none;
+        }
+        &::-moz-focus-inner {
+          border: 0;
+        }
+
+        // &::-webkit-inner-spin-button,
+        // &::-webkit-clear-button {
+        //   display: none;
+        // }
+
+        &::-webkit-datetime-edit-hour-field {
+          border-radius: 15%;
+        }
+        &::-webkit-datetime-edit-minute-field {
+          border-radius: 15%;
+        }
+
+        &::-webkit-datetime-edit-fields-wrapper {
+          display: flex;
+          justify-content: center;
+          padding: 4px;
+        }
+      }
+    }
+
+    &__footer {
+      span {
+        font-size: 12px;
+        opacity: 0.6;
+        margin-bottom: 6px;
+        display: block;
+      }
+      div {
+        display: flex;
+        gap: 6px;
+      }
+    }
+  }
+
+  &-select_time-btn,
+  &-signup {
+    padding: 10px 24px;
+    color: #d3c879;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid #d3c879;
+    border-radius: 4px;
+    background: none;
+    transition: 0.5s ease;
+    &.active {
+      background: #d3c879;
+      color: white;
+    }
+    &:disabled {
+      border: 1px solid $border-color;
+      background: none;
+      color: rgba(255, 255, 255, 0.3);
+      cursor: auto;
+    }
+  }
+
+  &__date-picker {
+    width: fit-content;
+    align-self: center;
+  }
+
+  @include tablet-big {
+    &__main {
+      padding-left: 24px;
+    }
+  }
+
+  @include tablet {
+    h2 {
+      font-size: 32px;
+      line-height: 44px;
+    }
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__aside {
+      &__header {
+        justify-content: unset;
+        align-items: center;
+        position: relative;
+      }
+
+      &__info {
+        span {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &__description {
+      font-size: 16px;
+    }
+
+    &__logotype {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &__avatar {
+      margin: 0 auto 16px;
+    }
+
+    h3,
+    &__name,
+    &__subtitle {
+      text-align: center;
+    }
+
+    &__name {
+      font-size: 18px;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin: 6px 0;
+    }
+
+    &__subtitle {
+      font-size: 18px;
+    }
+
+    &__main {
+      // display: flex;
+      // flex-direction: column;
+      align-items: center;
+      padding-left: 24px;
+
+      &__footer {
+        align-self: flex-start;
+      }
+
+      &__selected-day {
+        // font-size: 18px;
+        // text-align: center;
+      }
+    }
+    &__date-picker {
+      justify-self: center;
+    }
+  }
+
+  @include break(550px) {
+    &__main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-left: 24px;
+
+      &__footer {
+        align-self: flex-start;
+      }
+
+      &__selected-day {
+        // font-size: 18px;
+        // text-align: center;
+      }
+    }
+  }
+
+  @include mobile-big {
+    h2 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+}

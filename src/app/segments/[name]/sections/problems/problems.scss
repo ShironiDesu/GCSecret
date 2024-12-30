@@ -1,0 +1,84 @@
+@import "@/styles/mixins";
+@import "@/styles/typography";
+@import "@/styles/variables";
+
+.problems {
+  h2 {
+    font-size: 46px;
+    margin-bottom: 32px;
+  }
+  ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    li {
+      padding: 32px;
+      background: linear-gradient(
+        178.54deg,
+        rgba(246, 46, 46, 0.12) 63.95%,
+        rgba(160, 0, 0, 0.12) 120.15%
+      );
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 26px;
+    }
+    @include pc {
+      gap: 24px;
+      li {
+        padding: 24px;
+      }
+    }
+
+    @include laptop {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include tablet {
+    h2 {
+      font-size: 32px;
+      margin-bottom: 24px;
+    }
+    ul {
+      li {
+        padding: 16px;
+        gap: 16px;
+        font-size: 16px;
+        line-height: 26px;
+
+        img {
+          width: 48px;
+          height: 48px;
+        }
+      }
+    }
+  }
+
+  @include mobile-big {
+    ul {
+      gap: 16px;
+      li {
+        font-size: 14px;
+        line-height: 24px;
+      }
+    }
+  }
+  @include mobile {
+    ul {
+      li {
+        line-height: 20px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  @include mobile-min {
+    ul li {
+        line-height: 20px;
+        font-size: 10px;
+    }
+  }
+}

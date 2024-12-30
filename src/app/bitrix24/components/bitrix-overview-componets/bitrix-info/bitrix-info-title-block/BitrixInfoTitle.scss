@@ -1,0 +1,22 @@
+@import "@/styles/mixins";
+@import "@/styles/typography";
+@import "@/styles/variables";
+.bitrix-overview__title  {
+    color: white;
+// width: 535px;
+    font-size: 40px;
+    line-height: 52px;
+    padding: 32px;
+    @include laptop {
+        font-size: 30px;
+    }
+    @include tablet-big {
+        padding: 25px;
+    }
+
+    @include mobile-big {
+        font-size: 20px;
+        line-height: 26px;
+        padding: 20px;
+    }
+}
