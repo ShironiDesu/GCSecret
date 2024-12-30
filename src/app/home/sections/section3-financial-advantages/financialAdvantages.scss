@@ -385,6 +385,12 @@
     }
 
     @include break(485px) {
+        .financial-advantages__btn {
+            .button-img {
+                width: 20px;
+                height: 20px;
+            }
+        }
         h2 {
             font-size: 41px;
             line-height: 53.3px;

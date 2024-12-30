@@ -68,11 +68,15 @@
         height: 27px;
     }
 
-    @include tablet-big {
+    @include break(1070px) {
         h3 {
             font-size: 48px;
             line-height: 60px;
         }
+    }
+
+
+    @include tablet-big {   
 
         // &__main {
         //     height: auto;
