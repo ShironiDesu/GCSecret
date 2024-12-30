@@ -215,7 +215,7 @@ export default function Calculator() {
                   </div>
                 </div>
                 {isOpenDepartment && (
-                  <div className="options">
+                  <div className="options" data-lenis-prevent="true">
                     {departments.map((option, index) => (
                       <div
                         key={index}
