@@ -40,25 +40,24 @@ export default function Home() {
   return (
     <main id="homepage__main">
       <Hero />
+      <Section2 />
+      <TrustedBy />
       <Calculator />
-      {/* <Section2 /> */}
 
-      <WhyUs/>
-      <FinancialAdvantages/>
+      <WhyUs />
+      <FinancialAdvantages />
 
-      {/* <TrustedBy /> */}
       {/* <PriceList /> */}
       <Implementation />
       <Section3 />
-      <ChangeWorld/>
+      <ChangeWorld />
       <Section4 />
       {/* <Section7 /> */}
       <Section5 />
 
       {/* <Section8 /> */}
-      <AnotherFaq/>
+      <AnotherFaq />
       <Section6 />
-
     </main>
   );
 }

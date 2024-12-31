@@ -28,6 +28,16 @@ export default function Calculator() {
   const [selectedService, setSelectedService] = useState(
     "Выбрать сервисы для интеграции"
   );
+  const tariffs = [
+    { name: "Базовый тариф (12 месяцев)", range: [1, 5], price: 86400 },
+    { name: "Стандартный тариф (12 месяцев)", range: [6, 50], price: 230400 },
+    {
+      name: "Профессиональный тариф (12 месяцев)",
+      range: [51, 100],
+      price: 432000,
+    },
+  ];
+  const [selectedTarif, setSelectedTarif] = useState(null);
   const [selectedDepartmentsArray, setSelectedDepartmentsArray] = useState([]);
   const [selectedServicesArray, setSelectedServicesArray] = useState([]);
   const [staffCount, setStaffCount] = useState(null);
@@ -105,6 +115,20 @@ export default function Calculator() {
     }
 
     setStaffCount(value);
+    const numericValue = parseInt(value, 10);
+    if (numericValue > 100) {
+      const professionalTarif = tariffs.find(
+        (tarif) => tarif.name === "Профессиональный тариф (12 месяцев)"
+      );
+      setSelectedTarif(professionalTarif);
+      return;
+    }
+    const matchingTarif = tariffs.find(
+      (tarif) =>
+        numericValue >= tarif.range[0] && numericValue <= tarif.range[1]
+    );
+
+    setSelectedTarif(matchingTarif || null);
   };
   const serviceOptions = [
     { name: "Телефония (12 месяцев)", price: 60000 },
@@ -146,16 +170,19 @@ export default function Calculator() {
 
     let staffTariff = 0;
     let staffDiscount = 0;
-
+    let staffTariffName = "";
     if (staffCount >= 1 && staffCount <= 5) {
       staffTariff = 86400;
       staffDiscount = 57600;
+      staffTariffName = "Базовый тариф (12 месяцев)";
     } else if (staffCount >= 6 && staffCount <= 50) {
       staffTariff = 230400;
       staffDiscount = 177600;
+      staffTariffName = "Стандартный тариф (12 месяцев)";
     } else if (staffCount >= 51 && staffCount <= 100) {
       staffTariff = 432000;
       staffDiscount = 384000;
+      staffTariffName = "Профессиональный тариф (12 месяцев)";
     }
 
     const serviceTotal = selectedServicesArray.reduce(
@@ -166,7 +193,7 @@ export default function Calculator() {
     const totalPrice = discountedDepartmentTotal + staffTariff + serviceTotal;
     const totalSavings = departmentDiscount + staffDiscount;
 
-    setTotalPrice(totalPrice);
+    setTotalPrice(totalPrice - totalSavings);
     setTotalSavings(totalSavings);
   };
   const handleCalculate = () => {
@@ -337,7 +364,17 @@ export default function Calculator() {
                     )
                 )}
               </ul>
+              {selectedTarif && (
+                <li className="calculator__block__sum__list__item">
+                  <p className="calculator__block__sum__list__item__name">
+                    {selectedTarif.name}
+                  </p>
 
+                  <p className="calculator__block__sum__list__item__number">
+                    {selectedTarif.price}
+                  </p>
+                </li>
+              )}
               {(selectedDepartmentsArray.length !== 0 ||
                 selectedServicesArray.length !== 0) && (
                 <div className="calculator__block__sum__price">

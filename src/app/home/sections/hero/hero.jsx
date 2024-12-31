@@ -50,7 +50,7 @@ export default function Hero() {
             </span>
             <span className="h1__minitext">
               {" "}
-              Автоматизация вашего&nbsp; бизнеса.
+              Автоматизация вашего&nbsp;бизнеса.
             </span>
           </h1>
         </FadeUp_block>
