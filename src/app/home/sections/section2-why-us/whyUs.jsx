@@ -36,6 +36,7 @@ export default function whyUs() {
             descriptions: [
                 "Повышение эффективности автоматизированных отделов <span class='blue_text'>на 60%</span>",
                 "Экономия времени на рутинные задачи <span class='blue_text'>на 40%</span>",
+                "Увеличение дохода <span class='blue_text'>до 15%</span> без увеличения штата"
             ]
         }
     ]
