@@ -45,6 +45,7 @@ export default function Calculator() {
   const [totalSavings, setTotalSavings] = useState(null);
   const [isClicked, setIsClicked] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [showFinalSum, setShowFinalSum] = useState(false);
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1025) {
@@ -60,8 +61,18 @@ export default function Calculator() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // const toggleSelectDepartment = () => setIsOpenDepartment(!isOpenDepartment);
-  // const toggleSelectServices = () => setIsOpenServices(!isOpenServices);
+  useEffect(() => {
+    setIsClicked(false);
+    if (
+      selectedDepartmentsArray.length > 0 &&
+      selectedServicesArray.length > 0 &&
+      staffCount > 0
+    ) {
+      setShowFinalSum(true);
+    } else {
+      setShowFinalSum(false);
+    }
+  }, [selectedDepartmentsArray, selectedServicesArray, staffCount]);
 
   const handleOptionClick = (option, type) => {
     if (type === "department") {
@@ -81,7 +92,7 @@ export default function Calculator() {
         // Иначе добавляем отдел
         setSelectedDepartmentsArray((prev) => [...prev, findElement]);
         // setSelectedDepartment(option);
-        setIsClicked(true);
+        // setIsClicked(true);
       }
     } else if (type === "services") {
       const findService = serviceOptions.find(
@@ -100,7 +111,7 @@ export default function Calculator() {
         // Иначе добавляем сервис
         setSelectedServicesArray((prev) => [...prev, findService]);
         // setSelectedService(option);
-        setIsClicked(true);
+        // setIsClicked(true);
       }
     }
     // if (type === "department") {
@@ -363,42 +374,38 @@ export default function Calculator() {
                       </li>
                     )
                 )}
-              </ul>
-              {selectedTarif && (
-                <li className="calculator__block__sum__list__item">
-                  <p className="calculator__block__sum__list__item__name">
-                    {selectedTarif.name}
-                  </p>
+                {selectedTarif && (
+                  <li className="calculator__block__sum__list__item">
+                    <p className="calculator__block__sum__list__item__name">
+                      {selectedTarif.name}
+                    </p>
 
-                  <p className="calculator__block__sum__list__item__number">
-                    {selectedTarif.price}
-                  </p>
-                </li>
-              )}
-              {(selectedDepartmentsArray.length !== 0 ||
-                selectedServicesArray.length !== 0) && (
+                    <p className="calculator__block__sum__list__item__number">
+                      {selectedTarif.price}
+                    </p>
+                  </li>
+                )}
+              </ul>
+
+              {showFinalSum && isClicked && (
                 <div className="calculator__block__sum__price">
-                  {staffCount && isClicked && (
-                    <FadeUp_block>
-                      <p className="calculator__block__sum__price__final">
-                        {staffCount && totalPrice !== null
-                          ? totalPrice.toLocaleString()
-                          : ""}
-                      </p>
-                    </FadeUp_block>
-                  )}
-                  {staffCount && isClicked && (
-                    <FadeUp_block>
-                      <p className="calculator__block__sum__price__discount">
-                        {staffCount && totalSavings !== null
-                          ? `Вы экономите ${totalSavings.toLocaleString()} т`
-                          : ""}
-                      </p>
-                    </FadeUp_block>
-                  )}
+                  <FadeUp_block>
+                    <p className="calculator__block__sum__price__final">
+                      {staffCount && totalPrice !== null
+                        ? totalPrice.toLocaleString()
+                        : ""}
+                    </p>
+                  </FadeUp_block>
+
+                  <FadeUp_block>
+                    <p className="calculator__block__sum__price__discount">
+                      {staffCount && totalSavings !== null
+                        ? `Вы экономите ${totalSavings.toLocaleString()} т`
+                        : ""}
+                    </p>
+                  </FadeUp_block>
                 </div>
               )}
-
               <div className="calculator__block__sum__info">
                 {selectedDepartmentsArray.length > 0 &&
                   selectedServicesArray.length > 0 &&

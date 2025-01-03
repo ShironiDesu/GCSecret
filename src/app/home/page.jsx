@@ -40,8 +40,8 @@ export default function Home() {
   return (
     <main id="homepage__main">
       <Hero />
-      <Section2 />
-      <TrustedBy />
+      {/* <Section2 /> */}
+      {/* <TrustedBy /> */}
       <Calculator />
 
       <WhyUs />

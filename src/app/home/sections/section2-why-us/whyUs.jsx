@@ -2,6 +2,7 @@ import React from 'react'
 import "./whyUs.scss"
 import AfterImplementation from '@/app/segments/[name]/sections/afterImplementation/AfterImplementation'
 import FadeUp_block from '@/components/ui/FadeUp-block'
+import SwiperAdv from './SwiperAdv'
 
 export default function whyUs() {
 
@@ -41,6 +42,25 @@ export default function whyUs() {
         }
     ]
 
+    const advantagesTexts = [
+        {
+            title: "Многозадачность.",
+            desc: "Функционал объединяет <span class='blue_text'>все процессы компании</span>, и нет запроса, которого нельзя реализовать."
+        },
+        {
+            title: "Возможность.",
+            desc: "Интеграция со всеми сервисами Казахстана : 1С, телефония, мессенджеры, почтовые службы, сайты и социальные сети."
+        },
+        {
+            title: "Стабильность.",
+            desc: "Платформа совершенствовалась на протяжении 27 лет. Битрикс24 всегда работает, не подводя."
+        },
+        {
+            title: "Популярность.",
+            desc: "Битрикс24 входит в топ-5 сервисов международного рынка. Ежегодно более 15млн компаний выбирают эту систему."
+        }
+    ]
+
   return (
     <div className='why-us'>
         <div className='container'>
@@ -48,14 +68,7 @@ export default function whyUs() {
                 Почему <span className="blue_text">так много</span> компаний выбирают Битрикс24?
             </h2>
             <div className='why-us__description'>
-                <FadeUp_block>
-                    <h3>Многозадачность.</h3>
-                </FadeUp_block>
-                <FadeUp_block>
-                    <p className='why-us__big-paragraph'>
-                        Функционал объединяет <span className="blue_text">все процессы компании</span>, и нет запроса, которого нельзя реализовать.
-                    </p>
-                </FadeUp_block>
+                <SwiperAdv advArr={advantagesTexts}/>
             </div>
             <div className='why-us__fast-results'>
                 <h3>Быстрые результаты.</h3>

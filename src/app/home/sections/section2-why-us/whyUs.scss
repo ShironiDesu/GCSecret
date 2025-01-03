@@ -3,9 +3,57 @@
 @import "@/styles/variables";
 
 .why-us {
-    display: flex;
-    flex-direction: column;
-    gap: 120px;
+    width: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // gap: 120px;
+
+    .swiper {
+        width: calc(100% + 128px);
+        padding: 0 64px;
+        transform: translateX(-64px);
+        margin: 0;
+        // &-wrapper {
+        //   width: 100%;
+        // }
+
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            opacity: 0; /* Изначально скрываем слайд */
+            transition: opacity 1s ease; /* Плавное изменение прозрачности */
+            h3 {
+                white-space: normal;
+            }
+            
+            p {
+                white-space: normal;
+            }
+          }
+          
+          /* Когда слайд активен, мы делаем его видимым */
+          .swiper-slide.swiper-slide-active {
+            opacity: 1;
+        }
+
+        @include pc {
+            width: calc(100% + 64px);
+            padding: 0 32px;
+            transform: translateX(-32px);
+        }
+
+        @include laptop {
+            width: calc(100% + 48px);
+            padding: 0 24px;
+            transform: translateX(-24px);
+        }
+
+        @include mobile-big {
+            width: calc(100% + 32px);
+            padding: 0 16px;
+            transform: translateX(-16px);
+        }
+    }
 
     .container {
         display: flex;
@@ -30,6 +78,7 @@
         font-size: 64px;
         font-weight: 200;
         line-height: 83.2px;
+        color: white;
     }
 
     &__description {

@@ -30,8 +30,12 @@
     white-space: nowrap;
     .h1__minitext {
       font-weight: 300;
-      @include mobile-big {
+      @include break(600px) {
         display: inline-block;
+        font-size: 30px;
+        line-height: 40px;
+      }
+      @include mobile-big {
         font-size: 32px;
         line-height: 40px;
       }
@@ -69,9 +73,13 @@
       line-height: 60px;
       white-space: normal;
     }
+    @include break(670px) {
+      font-size: 36px;
+      line-height: 40px;
+    }
     @include mobile-big {
       font-size: 48px;
-      line-height: 62px;
+      line-height: 55px;
       margin-bottom: 12px;
     }
     @include mobile-mid {
@@ -156,7 +164,9 @@
     @include break(670px) {
       gap: 10px;
       & .button-rounded {
-        padding: 24px 30px;
+        font-size: 16px;
+        line-height: 20.8px;
+        padding: 20px 30px;
       }
     }
     @include break(601px) {
@@ -165,7 +175,7 @@
         font-size: 16px;
         line-height: 20.8px;
         gap: 18.5px;
-        padding: 24px 30px;
+        // padding: 24px 30px;
         // width: 95%;
         // justify-content: center;
 
